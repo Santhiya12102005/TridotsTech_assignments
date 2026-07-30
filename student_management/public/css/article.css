@@ -1,0 +1,41 @@
+.article-title{
+    text-align:center;
+    margin-bottom:30px;
+}
+
+.article-layout{
+    display:grid;
+    grid-template-columns:350px 1fr;
+    gap:40px;
+    max-width:1000px;
+    margin:auto;
+}
+
+.left-section{
+    display:flex;
+    flex-direction:column;
+}
+
+.article-image{
+    width:350px;
+    height:220px;
+    object-fit:cover;
+    border-radius:8px;
+}
+
+.article-info{
+    margin-top:20px;
+}
+
+.article-info h4{
+    margin:10px 0;
+}
+
+.right-section h3{
+    margin-bottom:15px;
+}
+
+.right-section p{
+    text-align:justify;
+    line-height:1.8;
+}

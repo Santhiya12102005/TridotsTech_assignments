@@ -1,0 +1,200 @@
+{
+ "actions": [],
+ "allow_bulk_edit": 1,
+ "allow_copy": 1,
+ "allow_rename": 1,
+ "autoname": "field:article_name",
+ "creation": "2026-07-20 15:09:38.734084",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "article",
+  "title",
+  "article_name",
+  "author_name",
+  "article_image",
+  "article_img",
+  "description",
+  "rating",
+  "status",
+  "amended_from",
+  "ispublished",
+  "route",
+  "cover_artist",
+  "country",
+  "language",
+  "genre",
+  "publisher",
+  "published",
+  "media_type",
+  "no_of_books",
+  "website"
+ ],
+ "fields": [
+  {
+   "fieldname": "article_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Article Name",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "author_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Author Name",
+   "reqd": 1
+  },
+  {
+   "fieldname": "article_image",
+   "fieldtype": "Attach Image",
+   "label": "Article Image"
+  },
+  {
+   "fieldname": "article_img",
+   "fieldtype": "Image",
+   "label": "Article",
+   "options": "article_image"
+  },
+  {
+   "fieldname": "description",
+   "fieldtype": "Text",
+   "label": "Description"
+  },
+  {
+   "fieldname": "rating",
+   "fieldtype": "Rating",
+   "label": "Rating"
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Status",
+   "options": "Available\nNot Available\nComing Soon"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "ArticleDemo",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "title",
+   "fieldtype": "Data",
+   "label": "Title"
+  },
+  {
+   "default": "0",
+   "fieldname": "ispublished",
+   "fieldtype": "Check",
+   "label": "IsPublished?"
+  },
+  {
+   "fieldname": "route",
+   "fieldtype": "Data",
+   "label": "Route"
+  },
+  {
+   "fieldname": "article",
+   "fieldtype": "Heading",
+   "label": "Article"
+  },
+  {
+   "fieldname": "cover_artist",
+   "fieldtype": "Data",
+   "label": "Cover Artist"
+  },
+  {
+   "fieldname": "country",
+   "fieldtype": "Data",
+   "label": "Country"
+  },
+  {
+   "fieldname": "language",
+   "fieldtype": "Data",
+   "label": "Language"
+  },
+  {
+   "fieldname": "genre",
+   "fieldtype": "Data",
+   "label": "Genre"
+  },
+  {
+   "fieldname": "publisher",
+   "fieldtype": "Data",
+   "label": "Publisher"
+  },
+  {
+   "fieldname": "published",
+   "fieldtype": "Data",
+   "label": "Published"
+  },
+  {
+   "fieldname": "media_type",
+   "fieldtype": "Data",
+   "label": "Media type"
+  },
+  {
+   "fieldname": "no_of_books",
+   "fieldtype": "Int",
+   "label": "No. of books"
+  },
+  {
+   "fieldname": "website",
+   "fieldtype": "Data",
+   "label": "Website"
+  }
+ ],
+ "grid_page_length": 50,
+ "has_web_view": 1,
+ "index_web_pages_for_search": 1,
+ "is_published_field": "ispublished",
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2026-07-21 10:58:20.191567",
+ "modified_by": "Administrator",
+ "module": "Student Management",
+ "name": "ArticleDemo",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "route": "article",
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": [
+  {
+   "color": "Green",
+   "title": "Available"
+  },
+  {
+   "color": "Gray",
+   "title": "Not Available"
+  },
+  {
+   "color": "Blue",
+   "title": "Coming Soon"
+  }
+ ],
+ "website_search_field": "title"
+}

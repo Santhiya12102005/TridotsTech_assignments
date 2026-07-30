@@ -1,0 +1,36 @@
+{% extends "templates/web.html" %}
+
+{% block style %}
+{% endblock %}
+
+{% block page_content %}
+
+<h1>{{ title }}</h1>
+
+<div style="display:grid; grid-template-columns:350px 1fr; gap:30px;">
+    <div>
+        <img src="{{ doc.article_image }}" style="width:350px;height:220px;">
+        <div style="margin-top: 20px;">
+            <p>Author : {{doc.author_name }}</p>
+            <p>Cover Artist: {{doc.cover_artist}}</p>
+            <p>Country: {{doc.country}}</p>
+            <p>Language: {{doc.language}}</p>
+            <p>Genre: {{doc.genre}}</p>
+            <p>Publisher: {{doc.publisher}}</p>
+            <p>Published: {{doc.published}}</p>
+            <p>Media type: {{doc.media_type}}</p>
+            <p>No. Of Books: {{doc.no_of_books}}</p>
+            <p>Rating : {{ doc.rating }}</p>
+            <p>Website: {{doc.website}}</p>
+            <p>Status : {{ doc.status }}</p>
+
+        </div>
+    </div>
+
+    <div>
+        <h3 style="margin-top: 0px;">Description</h3>
+        <p>{{ doc.description }}</p>
+    </div>
+</div>
+
+{% endblock %}

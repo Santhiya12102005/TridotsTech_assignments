@@ -1,0 +1,23 @@
+{
+ "allow_roles": [
+  {
+   "role": "System Manager"
+  }
+ ],
+ "creation": "2026-07-22 18:32:21.913638",
+ "docstatus": 0,
+ "doctype": "Module Onboarding",
+ "idx": 0,
+ "is_complete": 0,
+ "modified": "2026-07-22 18:32:21.913638",
+ "modified_by": "Administrator",
+ "module": "Student Management",
+ "name": "Inventory Onboard",
+ "owner": "Administrator",
+ "steps": [
+  {
+   "step": "Step1"
+  }
+ ],
+ "title": "Onboard"
+}
