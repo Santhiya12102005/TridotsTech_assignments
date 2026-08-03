@@ -90,6 +90,13 @@ class TestDocument(Document):
 	# 	frappe.msgprint("on update after submit is triggred...")
 
 	#before_rename()
-	def before_rename(self,old,new,merge=False):
-		frappe.msgprint("Before rename triggered.....")
-	
+	# def before_rename(self,old,new,merge=False):
+	# 	frappe.msgprint("Before rename triggered.....")
+
+	#on_trash()
+	def on_trash(self):
+		frappe.msgprint("on_trash triggered.....")
+
+	#after_delete()
+	def after_delete(self):
+		frappe.msgprint(self.name + "is deleted...")
