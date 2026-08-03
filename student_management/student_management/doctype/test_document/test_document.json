@@ -2,6 +2,7 @@
  "actions": [],
  "allow_bulk_edit": 1,
  "allow_rename": 1,
+ "autoname": "{department}-.####",
  "creation": "2026-07-30 10:27:03.611396",
  "doctype": "DocType",
  "engine": "InnoDB",
@@ -9,6 +10,7 @@
   "first_name",
   "last_name",
   "age",
+  "department",
   "description"
  ],
  "fields": [
@@ -31,15 +33,21 @@
    "fieldname": "age",
    "fieldtype": "Int",
    "label": "Age"
+  },
+  {
+   "fieldname": "department",
+   "fieldtype": "Data",
+   "label": "Department"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2026-08-03 12:05:58.773456",
+ "modified": "2026-08-03 12:51:59.701821",
  "modified_by": "Administrator",
  "module": "Student Management",
  "name": "Test Document",
+ "naming_rule": "Expression",
  "owner": "Administrator",
  "permissions": [
   {

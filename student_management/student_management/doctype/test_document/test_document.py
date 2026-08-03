@@ -15,6 +15,7 @@ class TestDocument(Document):
 		from frappe.types import DF
 
 		age: DF.Int
+		department: DF.Data | None
 		description: DF.TextEditor | None
 		first_name: DF.Data | None
 		last_name: DF.Data | None
@@ -30,4 +31,7 @@ class TestDocument(Document):
 		if self.age < 18:
 			frappe.throw("Age must be above 18!")	
 
-	
+	# before_naming()
+	def before_naming(self):
+		self.department = "BN"
+		frappe.msgprint(self.department) # it gives only BN in pop up it override your value entered in department field
