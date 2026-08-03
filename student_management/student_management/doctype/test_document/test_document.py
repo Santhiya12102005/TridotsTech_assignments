@@ -70,8 +70,10 @@ class TestDocument(Document):
 	# 		frappe.throw("You're not able to cancel this record")
 
 	#after_insert()
-	def after_insert(self):
-		frappe.msgprint("Record inserted successfully")
+	# def after_insert(self):
+	# 	frappe.msgprint("Record inserted successfully")
 
-	
+	#before_update_after_submit()
+	def before_update_after_submit(self):
+		frappe.msgprint("Before update after submit")
 	
