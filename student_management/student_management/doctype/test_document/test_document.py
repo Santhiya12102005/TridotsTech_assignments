@@ -19,6 +19,7 @@ class TestDocument(Document):
 		description: DF.TextEditor | None
 		first_name: DF.Data | None
 		last_name: DF.Data | None
+		password: DF.Password | None
 	# end: auto-generated types
 
 	# before_save() Method
@@ -45,3 +46,8 @@ class TestDocument(Document):
 		if not self.first_name:
 			self.first_name = "Default Name"
 			frappe.msgprint("Default name set successfully")
+
+	#validate()
+	def validate(self):
+		if len(self.password) <= 7:
+			frappe.throw("Password is less than 7 characters!")
