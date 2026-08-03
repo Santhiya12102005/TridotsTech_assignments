@@ -39,3 +39,9 @@ class TestDocument(Document):
 	#autoname()
 	def autoname(self):
 		self.name = f"{self.department}-.####"
+
+	#before_validate()
+	def before_validate(self):
+		if not self.first_name:
+			self.first_name = "Default Name"
+			frappe.msgprint("Default name set successfully")
