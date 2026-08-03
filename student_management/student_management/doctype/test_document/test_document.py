@@ -32,6 +32,10 @@ class TestDocument(Document):
 			frappe.throw("Age must be above 18!")	
 
 	# before_naming()
-	def before_naming(self):
-		self.department = "BN"
-		frappe.msgprint(self.department) # it gives only BN in pop up it override your value entered in department field
+	# def before_naming(self):
+	# 	self.department = "BN"
+	# 	frappe.msgprint(self.department) # it gives only BN in pop up it override your value entered in department field
+
+	#autoname()
+	def autoname(self):
+		self.name = f"{self.department}-.####"
