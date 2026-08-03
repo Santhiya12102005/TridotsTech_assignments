@@ -5,7 +5,7 @@
 from frappe.model.document import Document
 
 
-class Category(Document):
+class Person(Document):
 	# begin: auto-generated types
 	# This code is auto-generated. Do not modify anything in this block.
 
@@ -14,7 +14,7 @@ class Category(Document):
 	if TYPE_CHECKING:
 		from frappe.types import DF
 
-		category_name: DF.Data | None
+
 	# end: auto-generated types
 
 	pass

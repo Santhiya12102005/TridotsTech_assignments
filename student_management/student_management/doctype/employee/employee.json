@@ -2,42 +2,40 @@
  "actions": [],
  "allow_bulk_edit": 1,
  "allow_rename": 1,
- "autoname": "SUP-.###",
- "creation": "2026-07-21 16:47:56.018425",
+ "autoname": "EMP-.###",
+ "creation": "2026-07-30 14:16:36.858610",
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
-  "supplier_name",
-  "category",
-  "status"
+  "employee_name",
+  "email",
+  "working_role"
  ],
  "fields": [
   {
-   "fieldname": "supplier_name",
+   "fieldname": "employee_name",
    "fieldtype": "Data",
-   "label": "Supplier Name",
-   "translatable": 1
+   "label": "Employee Name"
   },
   {
-   "fieldname": "category",
+   "fieldname": "email",
+   "fieldtype": "Data",
+   "label": "Email"
+  },
+  {
+   "fieldname": "working_role",
    "fieldtype": "Link",
-   "label": "Category",
-   "options": "Category"
-  },
-  {
-   "fieldname": "status",
-   "fieldtype": "Select",
-   "label": "Status",
-   "options": "Pending\nActive\nVerified"
+   "label": "Working Role",
+   "options": "Working Role"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2026-07-30 12:45:29.468778",
+ "modified": "2026-07-30 14:22:56.663945",
  "modified_by": "Administrator",
  "module": "Student Management",
- "name": "Suppliers",
+ "name": "Employee",
  "naming_rule": "Expression",
  "owner": "Administrator",
  "permissions": [

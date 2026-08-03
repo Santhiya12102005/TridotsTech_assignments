@@ -2,57 +2,32 @@
  "actions": [],
  "allow_bulk_edit": 1,
  "allow_rename": 1,
- "autoname": "field:task_name",
- "color": "blue",
- "creation": "2026-07-24 12:02:22.388267",
- "default_view": "List",
+ "creation": "2026-07-31 12:26:57.585315",
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
   "task_name",
-  "test_fil_ref",
-  "button",
-  "st",
-  "et"
+  "description"
  ],
  "fields": [
   {
    "fieldname": "task_name",
    "fieldtype": "Data",
-   "in_preview": 1,
-   "label": "Task Name",
-   "unique": 1
+   "label": "Task Name"
   },
   {
-   "fieldname": "test_fil_ref",
-   "fieldtype": "Link",
-   "label": "Selection from test_filter",
-   "options": "Test Filter"
-  },
-  {
-   "fieldname": "button",
-   "fieldtype": "Button",
-   "label": "Button"
-  },
-  {
-   "fieldname": "st",
-   "fieldtype": "Date",
-   "label": "ST"
-  },
-  {
-   "fieldname": "et",
-   "fieldtype": "Date",
-   "label": "ET"
+   "fieldname": "description",
+   "fieldtype": "Small Text",
+   "label": "Description"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2026-07-24 16:51:10.799005",
+ "modified": "2026-07-31 12:27:33.368409",
  "modified_by": "Administrator",
  "module": "Student Management",
- "name": "task",
- "naming_rule": "By fieldname",
+ "name": "Task",
  "owner": "Administrator",
  "permissions": [
   {
@@ -70,7 +45,6 @@
  ],
  "row_format": "Dynamic",
  "rows_threshold_for_grid_search": 20,
- "search_fields": "test_fil_ref",
  "sort_field": "creation",
  "sort_order": "DESC",
  "states": []

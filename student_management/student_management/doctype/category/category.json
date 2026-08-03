@@ -2,13 +2,12 @@
  "actions": [],
  "allow_bulk_edit": 1,
  "allow_rename": 1,
- "autoname": "cat-.###",
+ "autoname": "CAT-.###",
  "creation": "2026-07-21 11:58:38.867266",
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
-  "category_name",
-  "description"
+  "category_name"
  ],
  "fields": [
   {
@@ -16,17 +15,12 @@
    "fieldtype": "Data",
    "label": "Category Name",
    "translatable": 1
-  },
-  {
-   "fieldname": "description",
-   "fieldtype": "Small Text",
-   "label": "Description"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2026-07-23 18:17:23.397615",
+ "modified": "2026-07-30 12:47:09.302571",
  "modified_by": "Administrator",
  "module": "Student Management",
  "name": "Category",

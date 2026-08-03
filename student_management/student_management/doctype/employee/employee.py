@@ -1,11 +1,11 @@
 # Copyright (c) 2026, Santhiya and contributors
 # For license information, please see license.txt
 
-import frappe
+# import frappe
 from frappe.model.document import Document
 
 
-class Task(Document):
+class Employee(Document):
 	# begin: auto-generated types
 	# This code is auto-generated. Do not modify anything in this block.
 
@@ -14,18 +14,9 @@ class Task(Document):
 	if TYPE_CHECKING:
 		from frappe.types import DF
 
-		description: DF.SmallText | None
-		task_name: DF.Data | None
+		email: DF.Data | None
+		employee_name: DF.Data | None
+		working_role: DF.Link | None
 	# end: auto-generated types
+
 	pass
-
-def send_message():
-    frappe.get_doc({
-        "doctype": "Task",
-        "task_name": "Created by Cron"
-    }).insert(ignore_permissions=True)
-
-    frappe.db.commit()
-
-    frappe.logger().info("Cron executed successfully")
-

@@ -14,9 +14,20 @@ class TestDocument(Document):
 	if TYPE_CHECKING:
 		from frappe.types import DF
 
+		age: DF.Int
 		description: DF.TextEditor | None
+		first_name: DF.Data | None
+		last_name: DF.Data | None
 	# end: auto-generated types
 
+	# before_save() Method
 	def before_save(self):
 		if not self.description:
 			self.description = "Default Description"
+
+	# before_insert()
+	def before_insert(self):
+		if self.age < 18:
+			frappe.throw("Age must be above 18!")	
+
+	
