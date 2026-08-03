@@ -58,9 +58,14 @@ class TestDocument(Document):
 	# 		frappe.msgprint("succvalidation")	
 
 	#before_submit()
-	def before_submit(self):
-		if self.age<18:
-			frappe.throw("Cannot Submit you are not eligibile")
-		else:
-			frappe.msgprint("Submitted successfull")
+	# def before_submit(self):
+	# 	if self.age<18:
+	# 		frappe.throw("Cannot Submit you are not eligibile")
+	# 	else:
+	# 		frappe.msgprint("Submitted successfull")
+
+	#before_cancle()
+	def before_cancel(self):
+		if self.age>=18:
+			frappe.throw("You're not able to cancel this record")
 	
