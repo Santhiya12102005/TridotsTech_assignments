@@ -78,10 +78,16 @@ class TestDocument(Document):
 	# 	frappe.msgprint("Before update after submit")
 
 	#on_update()
-	def on_update(self):
-		frappe.msgprint("on_update triggered....")
+	# def on_update(self):
+	# 	frappe.msgprint("on_update triggered....")
 
-	#on_submit()
-	def on_submit(self):
-		frappe.msgprint("on_submit is triggered....")
+	# #on_submit()
+	# def on_submit(self):
+	# 	frappe.msgprint("on_submit is triggered....")
+
+	#on_update_after_submit()
+	def on_update_after_submit(self):
+		frappe.msgprint("on update after submit is triggred...")
+
+	
 	
