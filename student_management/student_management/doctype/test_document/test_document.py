@@ -15,6 +15,7 @@ class TestDocument(Document):
 		from frappe.types import DF
 
 		age: DF.Int
+		amended_from: DF.Link | None
 		department: DF.Data | None
 		description: DF.TextEditor | None
 		first_name: DF.Data | None
@@ -23,14 +24,16 @@ class TestDocument(Document):
 	# end: auto-generated types
 
 	# before_save() Method
-	def before_save(self):
-		if not self.description:
-			self.description = "Default Description"
+	# def before_save(self):
+	# 	if not self.description:
+	# 		self.description = "Default Description"
 
-	# before_insert()
-	def before_insert(self):
-		if self.age < 18:
-			frappe.throw("Age must be above 18!")	
+	#before_insert()
+	# def before_insert(self):
+	# 	if self.age < 18:
+	# 		frappe.throw("Age must be above 18!")
+	# 	else:
+	# 		frappe.msgprint("Successful")	
 
 	# before_naming()
 	# def before_naming(self):
@@ -38,16 +41,26 @@ class TestDocument(Document):
 	# 	frappe.msgprint(self.department) # it gives only BN in pop up it override your value entered in department field
 
 	#autoname()
-	def autoname(self):
-		self.name = f"{self.department}-.####"
+	# def autoname(self):
+	# 	self.name = f"{self.department}-.####"
 
 	#before_validate()
-	def before_validate(self):
-		if not self.first_name:
-			self.first_name = "Default Name"
-			frappe.msgprint("Default name set successfully")
+	# def before_validate(self):
+	# 	if not self.first_name:
+	# 		self.first_name = "Default Name"
+	# 		frappe.msgprint("Default name set successfully")
 
 	#validate()
-	def validate(self):
-		if len(self.password) <= 7:
-			frappe.throw("Password is less than 7 characters!")
+	# def validate(self):
+	# 	if len(self.password) <= 7:
+	# 		frappe.throw("Password is less than 7 characters!")
+	# 	else:
+	# 		frappe.msgprint("succvalidation")	
+
+	#before_submit()
+	def before_submit(self):
+		if self.age<18:
+			frappe.throw("Cannot Submit you are not eligibile")
+		else:
+			frappe.msgprint("Submitted successfull")
+	
