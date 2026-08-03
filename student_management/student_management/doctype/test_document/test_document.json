@@ -21,6 +21,7 @@
    "label": "Description"
   },
   {
+   "allow_on_submit": 1,
    "fieldname": "first_name",
    "fieldtype": "Data",
    "label": "First Name"
@@ -60,7 +61,7 @@
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2026-08-03 15:14:53.925005",
+ "modified": "2026-08-03 15:53:21.560587",
  "modified_by": "Administrator",
  "module": "Student Management",
  "name": "Test Document",

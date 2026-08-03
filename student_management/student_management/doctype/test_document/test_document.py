@@ -65,7 +65,13 @@ class TestDocument(Document):
 	# 		frappe.msgprint("Submitted successfull")
 
 	#before_cancle()
-	def before_cancel(self):
-		if self.age>=18:
-			frappe.throw("You're not able to cancel this record")
+	# def before_cancel(self):
+	# 	if self.age>=18:
+	# 		frappe.throw("You're not able to cancel this record")
+
+	#after_insert()
+	def after_insert(self):
+		frappe.msgprint("Record inserted successfully")
+
+	
 	
