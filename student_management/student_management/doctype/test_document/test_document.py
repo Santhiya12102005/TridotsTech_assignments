@@ -74,6 +74,14 @@ class TestDocument(Document):
 	# 	frappe.msgprint("Record inserted successfully")
 
 	#before_update_after_submit()
-	def before_update_after_submit(self):
-		frappe.msgprint("Before update after submit")
+	# def before_update_after_submit(self):
+	# 	frappe.msgprint("Before update after submit")
+
+	#on_update()
+	def on_update(self):
+		frappe.msgprint("on_update triggered....")
+
+	#on_submit()
+	def on_submit(self):
+		frappe.msgprint("on_submit is triggered....")
 	
