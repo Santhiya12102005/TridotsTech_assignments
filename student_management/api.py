@@ -100,3 +100,9 @@ def custom_logic(doc, method):
 
 #     return "Log level changed to DEBUG"
 
+@frappe.whitelist()
+def create_task(task_subject):
+    task = frappe.new_doc("Task")
+    task.task_subject = task_subject
+    task.save()
+    return task.name
