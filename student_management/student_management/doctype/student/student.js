@@ -431,3 +431,26 @@ frappe.ui.form.on("Student", {
 //     }
 // });
 
+frappe.ui.form.on("Student",{
+    refresh(){
+        let dialog = new frappe.ui.Dialog({
+            title:"Create Contact",
+            fields:[{
+                label:"First Name",
+                fieldname:"first_name",
+                fieldtype:"Data",
+                reqd:1
+            }],
+            primary_action_label:"Create",
+            primary_action(values){
+                let first_name = values.first_name
+                dialog.hide()
+                frappe.route_options = {
+                    first_name : first_name
+                }
+                frappe.new_doc("Contact")
+            }
+        })
+        dialog.show()
+    }
+})
