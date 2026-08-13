@@ -2,6 +2,8 @@ import frappe
 from frappe.query_builder import DocType
 from frappe.utils import cint, flt, cstr, fmt_money, today, now
 from frappe.utils import pretty_date, add_to_date, now
+import time
+from frappe.utils.logger import set_log_level
 
 
 def custom_logic(doc, method):
@@ -65,20 +67,36 @@ def custom_logic(doc, method):
 #         "Pretty Now": pretty_date(now())
 #     }
 
-@frappe.whitelist()
-def get_rec_doc():
-    todo_rec = frappe.get_list("ToDo",fields=["name","description"],limit=5)
-    todos = frappe.get_list("ToDo",fields=["name","description","owner"],limit=5)
-    result = []
+# @frappe.whitelist()
+# def get_rec_doc():
+#     todo_rec = frappe.get_list("ToDo",fields=["name","description"],limit=5)
+#     todos = frappe.get_list("ToDo",fields=["name","description","owner"],limit=5)
+#     result = []
 
-    for todo in todos:
-        email = frappe.db.get_value("User",todo.owner,"email")
-        result.append({"name": todo.name,"owner": todo.owner,"email": email})
+#     for todo in todos:
+#         email = frappe.db.get_value("User",todo.owner,"email")
+#         result.append({"name": todo.name,"owner": todo.owner,"email": email})
 
-    current_time = now()
+#     current_time = now()
 
-    return {
-        "Server Time":current_time,
-        "Secure Fetching":todo_rec,
-        "Optimization":result
-    }
+#     return {
+#         "Server Time":current_time,
+#         "Secure Fetching":todo_rec,
+#         "Optimization":result
+#     }
+
+# @frappe.whitelist()
+# def get_role_profile(role_profile):
+#     time.sleep(5)
+#     return f"Role Profile received: {role_profile}"
+
+# @frappe.whitelist()
+# def test_log_level():
+#     set_log_level("ERROR")
+#     frappe.logger().debug("This is debug message")
+#     frappe.logger().info("This is info message")
+#     frappe.logger().warning("This is warning message")
+#     frappe.logger().error("This is error message")
+
+#     return "Log level changed to DEBUG"
+

@@ -1,0 +1,16 @@
+<!-- students.html -->
+{% extends "templates/web.html" %}
+
+
+{% block favicon %}
+<link rel="shortcut icon" href="{{ exicon }}" type="image/x-icon">
+{% endblock %}
+
+{% block page_content %}
+<h1>Student List ({{ total }})</h1>
+<ol>
+{% for s in students %}
+    <li>{{ s.name1 }} — {{ s.dob }}</li>
+{% endfor %}
+</ol>
+{% endblock %}

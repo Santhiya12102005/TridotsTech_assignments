@@ -6,3 +6,8 @@
 
 // 	},
 // });
+
+frappe.meta.docfield_map["ApplicationForm"].fieldtype.formatter=(value)=>{
+    if(value === "Section Break") return "🔵 Section Break";
+    else return value;
+}

@@ -8,6 +8,7 @@
  "engine": "InnoDB",
  "field_order": [
   "name1",
+  "age",
   "child"
  ],
  "fields": [
@@ -21,13 +22,18 @@
    "fieldtype": "Table",
    "label": "Child",
    "options": "Ex_child"
+  },
+  {
+   "fieldname": "age",
+   "fieldtype": "Int",
+   "label": "Age"
   }
  ],
  "grid_page_length": 50,
  "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2026-07-23 14:28:09.107162",
+ "modified": "2026-08-10 12:00:12.033660",
  "modified_by": "Administrator",
  "module": "Student Management",
  "name": "Ex_parent",

@@ -1,7 +1,7 @@
 # Copyright (c) 2026, Santhiya and contributors
 # For license information, please see license.txt
 
-# import frappe
+import frappe
 from frappe.model.document import Document
 
 
@@ -14,8 +14,13 @@ class Dummy(Document):
 	if TYPE_CHECKING:
 		from frappe.types import DF
 
+		email: DF.Data | None
 		name1: DF.Data | None
 		value: DF.Int
 	# end: auto-generated types
 
-	pass
+	# def before_discard(self):
+	# 	frappe.msgprint("Before discard triggered (server-side)")
+
+	# def on_discard(self):
+	# 	frappe.msgprint("After discard triggered (server-side)")

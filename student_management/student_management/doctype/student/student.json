@@ -2,7 +2,7 @@
  "actions": [],
  "allow_bulk_edit": 1,
  "allow_rename": 1,
- "autoname": "hash",
+ "autoname": "prompt",
  "creation": "2026-07-16 12:12:12.645262",
  "doctype": "DocType",
  "engine": "InnoDB",
@@ -12,6 +12,7 @@
   "name1",
   "dob",
   "age",
+  "barcode",
   "course",
   "title",
   "route",
@@ -34,6 +35,7 @@
    "search_index": 1
   },
   {
+   "allow_on_submit": 1,
    "fieldname": "name1",
    "fieldtype": "Data",
    "label": "Name"
@@ -73,6 +75,11 @@
   {
    "fieldname": "column_break_owzv",
    "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "barcode",
+   "fieldtype": "Data",
+   "label": "Barcode"
   }
  ],
  "grid_page_length": 50,
@@ -81,11 +88,11 @@
  "is_published_field": "ispublished",
  "is_submittable": 1,
  "links": [],
- "modified": "2026-07-20 14:26:42.859621",
+ "modified": "2026-08-13 15:50:31.777935",
  "modified_by": "Administrator",
  "module": "Student Management",
  "name": "Student",
- "naming_rule": "Random",
+ "naming_rule": "Set by user",
  "owner": "Administrator",
  "permissions": [
   {

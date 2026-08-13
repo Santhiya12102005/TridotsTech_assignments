@@ -7,7 +7,8 @@
  "engine": "InnoDB",
  "field_order": [
   "name1",
-  "value"
+  "value",
+  "email"
  ],
  "fields": [
   {
@@ -19,12 +20,18 @@
    "fieldname": "value",
    "fieldtype": "Int",
    "label": "Value"
+  },
+  {
+   "fieldname": "email",
+   "fieldtype": "Data",
+   "label": "Email",
+   "options": "Email"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2026-07-29 14:43:33.303929",
+ "modified": "2026-08-10 16:01:15.646195",
  "modified_by": "Administrator",
  "module": "Student Management",
  "name": "Dummy",

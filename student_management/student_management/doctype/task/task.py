@@ -16,7 +16,9 @@ class Task(Document):
 
 		description: DF.SmallText | None
 		task_name: DF.Data | None
+		task_subject: DF.Data | None
 	# end: auto-generated types
+
 	pass
 
 def send_message():

@@ -26,8 +26,19 @@ app_include_js = "custom_desk.bundle.js"
 # ------------------
 
 # include js, css files in header of desk.html
-# app_include_css = "/assets/student_management/css/student_management.css"
+# app_include_css = "/assets/student_management/css/stud_mang.css"
+# app_include_css = "/assets/student_management/css/custom.css"
 # app_include_js = "/assets/student_management/js/student_management.js"
+# app_include_js = "custom_desk.bundle.js"
+# app_include_css = "custom_desk.bundle.css"
+
+
+# web_include_css = "/assets/student_management/css/website.css"
+# web_include_js = "/assets/student_management/js/website.js"
+
+# webform_include_css = {
+#     "student-registration": "public/css/webform.css"
+# }
 
 # include js, css files in header of web template
 # web_include_css = "/assets/student_management/css/student_management.css"
@@ -123,16 +134,17 @@ app_include_js = "custom_desk.bundle.js"
 
 # notification_config = "student_management.notifications.get_notification_config"
 
-# Permissions
+# Permissions 
 # -----------
 # Permissions evaluated in scripted ways
 
 # permission_query_conditions = {
-# 	"Event": "frappe.desk.doctype.event.event.get_permission_query_conditions",
+#     "ToDo": "student_management.permissions.todo_query",
 # }
+
 #
 # has_permission = {
-# 	"Event": "frappe.desk.doctype.event.event.has_permission",
+#     "ToDo":"student_management.permissions.todo_has_permissions"
 # }
 
 # Document Events
@@ -178,14 +190,26 @@ app_include_js = "custom_desk.bundle.js"
 #
 # Specify custom mixins to extend the standard doctype controller.
 # extend_doctype_class = {
-# 	"Task": "student_management.custom.task.CustomTaskMixin"
+#     "ToDo": [
+#         "student_management.extensions.todo.CustomToDo"
+#     ]
+# }
+
+# extend_doctype_class = {
+#     "Person": [
+#         "student_management.extensions.person.PersonMixin",
+#         "student_management.extensions.common.ValidationMixin",
+#     ],
+#     "Dummy": [
+#         "student_management.extensions.common.ValidationMixin",
+#     ]
 # }
 
 # Overriding Methods
 # ------------------------------
 #
-# override_whitelisted_methods = {
-# 	"frappe.desk.doctype.event.event.get_events": "student_management.event.get_events"
+# override_doctype_class = {
+#     "ToDo": "student_management.overrides.todo.CustomToDo"
 # }
 #
 # each overriding function accepts a `data` argument;
@@ -268,3 +292,38 @@ scheduler_events = {
         "student_management.tasks.daily_maintenance"
     ]
 }
+
+# doctype_js = {
+#     "Person" : "public/js/person.js"
+# }
+
+# override the default refresh function
+# doctype_js = {
+#     "ToDo" : "public/js/todo.js"
+# }
+
+# after/before migration
+# before_migrate = "student_management.migrate.before_migrate"
+# after_migrate = "student_management.migrate.after_migrate"
+
+# after_build
+# after_build = "student_management.build.after_build"
+
+# context hooks
+# website_context = {
+#     "favicon": "/assets/student_management/image/sunlight.png",
+#     "exicon": "/assets/student_management/image/woman.png"
+# }
+
+# # 404 page context entended
+# extend_website_page_controller_context = {
+#     "frappe.www.404": "student_management.overrides.pages.context_404"
+# }
+
+# website_route_rules = [
+#     {"from_route": "/student/<name>", "to_route": "student"},
+# ]
+
+# get_web_pages_with_dynamic_routes = (
+#     "student_management.script.get_web_pages_with_dynamic_routes"
+# )

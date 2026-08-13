@@ -1,0 +1,10 @@
+/* website.css */
+.navbar {
+    background-color: #83d8ff;
+}
+
+.hero-section {
+    background: linear-gradient(135deg, #2ca8e1, #83d8ff);
+    color: white;
+    padding: 80px 20px;
+}

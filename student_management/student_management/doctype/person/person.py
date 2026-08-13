@@ -14,7 +14,7 @@ class Person(Document):
 	if TYPE_CHECKING:
 		from frappe.types import DF
 
-
+		d_name: DF.Data | None
 	# end: auto-generated types
 
 	pass

@@ -1,0 +1,13 @@
+body {
+    background-color: #82eaff;
+}
+
+.web-form {
+    border: 2px solid rgb(0, 179, 214);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.btn-primary {
+    background-color: rgb(122, 235, 122);
+}

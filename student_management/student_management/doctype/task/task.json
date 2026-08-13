@@ -2,11 +2,13 @@
  "actions": [],
  "allow_bulk_edit": 1,
  "allow_rename": 1,
+ "autoname": "Task-.###",
  "creation": "2026-07-31 12:26:57.585315",
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
   "task_name",
+  "task_subject",
   "description"
  ],
  "fields": [
@@ -19,15 +21,21 @@
    "fieldname": "description",
    "fieldtype": "Small Text",
    "label": "Description"
+  },
+  {
+   "fieldname": "task_subject",
+   "fieldtype": "Data",
+   "label": "Subject"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2026-07-31 12:27:33.368409",
+ "modified": "2026-08-13 18:20:55.629402",
  "modified_by": "Administrator",
  "module": "Student Management",
  "name": "Task",
+ "naming_rule": "Expression",
  "owner": "Administrator",
  "permissions": [
   {

@@ -1,0 +1,17 @@
+/* Navbar */
+.navbar {
+    background-color: rgb(148, 189, 255) !important;
+}
+
+/* Navbar links/icons - adjust text color for contrast if needed */
+.navbar .navbar-nav .nav-link,
+.navbar .navbar-brand,
+.navbar a {
+    color: #1a1a1a !important;
+}
+
+/* Footer */
+.web-footer,
+footer {
+    background-color: skyblue !important;
+}
