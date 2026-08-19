@@ -1,13 +1,13 @@
-frappe.listview_settings["Registration"] = {
-    formatters: {
-        is_checked(value) {
-            return cint(value) ? "Yes" : "No";
-        },
-        age(value) {
-            return value ? `${value} Years old` : value;
-        }
-    }
-};
+// frappe.listview_settings["Registration"] = {
+//     formatters: {
+//         is_checked(value) {
+//             return cint(value) ? "Yes" : "No";
+//         },
+//         age(value) {
+//             return value ? `${value} Years old` : value;
+//         }
+//     }
+// };
 
 
 // console.log("REGISTRATION LIST JS LOADED");

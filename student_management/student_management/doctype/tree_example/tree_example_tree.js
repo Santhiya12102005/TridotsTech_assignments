@@ -15,7 +15,7 @@ frappe.treeview_settings["Tree Example"] = {
 			fieldtype: "Select",
 			label: "Choice",
 			options: "Select 1\nSelect 2",
-			// on_change: handle_company_change(),
+			//on_change: handle_company_change(),
 		},
 	],
     // displaed when u click add child
@@ -41,7 +41,7 @@ frappe.treeview_settings["Tree Example"] = {
             frappe.show_alert("New Child button clicked")
         }
     }],
-    extend_toolbar: true,   //it will append your getsum tool in existing tool bar 
+    extend_toolbar:false,   //it will append your getsum tool in existing tool bar 
     toolbar:[
         {
             label: "Get Sum",

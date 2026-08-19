@@ -1,39 +1,39 @@
 // Copyright (c) 2026, Santhiya and contributors
 // For license information, please see license.txt
 
-// frappe.ui.form.on("Student", {
-// 	refresh:function(frm) {
-//         frm.add_custom_button("Quick age entry", function(){
-//             let dialog = new frappe.ui.Dialog({
-//                 title:"Quick age entry",
-//                 primary_action_label:"Submit",
-//                 primary_action: function() {
-//                     // Get the value user entered
-//                     let entered_age = age_control.get_value();
+frappe.ui.form.on("Student", {
+	refresh:function(frm) {
+        frm.add_custom_button("Quick age entry", function(){
+            let dialog = new frappe.ui.Dialog({
+                title:"Quick age entry",
+                primary_action_label:"Submit",
+                primary_action: function() {
+                    // Get the value user entered
+                    let entered_age = age_control.get_value();
 
-//                     // Set it into the Student form's age field
-//                     frm.set_value("age", entered_age);
+                    // Set it into the Student form's age field
+                    frm.set_value("age", entered_age);
 
-//                     // Optional: save the form automatically
-//                     // frm.save();
+                    // Optional: save the form automatically
+                    // frm.save();
 
-//                     dialog.hide();
-//                 }
-//             })
+                    dialog.hide();
+                }
+            })
 
-//             let age_control = frappe.ui.form.make_control({
-//                 parent:dialog.body,
-//                 df:{
-//                     fieldtype:"Int",
-//                     fieldname:"age",
-//                     label:"Age"
-//                 },
-//                 render_input:true
-//             })
-//             dialog.show()
-//         })
-// 	},
-// });
+            let age_control = frappe.ui.form.make_control({
+                parent:dialog.body,
+                df:{
+                    fieldtype:"Int",
+                    fieldname:"age",
+                    label:"Age"
+                },
+                render_input:true
+            })
+            dialog.show()
+        })
+	},
+});
 
 // frappe.meta.docfield_map["Student"].age.formatter = (value) =>{
 //     if (value){
@@ -45,6 +45,7 @@
 // frappe.ui.form.on("Student",{
 //     refresh(frm){
 //         let route = frappe.get_route()
+//         console.log("Get route")
 //         console.log(route)
 //     }
 // })
@@ -174,60 +175,55 @@
 // });
 
 //chart
-frappe.ui.form.on("Student", {
-    refresh(frm) {
-        frm.add_custom_button("Show Chart", () => {
-            //its is used to show the chart for 1 time
-            if (frm.$wrapper.find("#student-chart").length) {
-                return;
-            }
-            let chart_area = $(`
-                <div id="student-chart"
-                     style="margin: 20px 0; height: 300px;">
-                </div>
-            `);
-            frm.$wrapper.find(".form-layout").append(chart_area);
-            let chart = new frappe.Chart("#student-chart", {
-                title: "Student Data",
-                data: {
-                    labels: ["A", "B", "C", "D"],
-                    datasets: [
-                        {
-                            name: "Male",
-                            values: [10, 20, 15, 25]
-                        },
-                        {
-                            name: "Female",
-                            values: [15, 25, 20, 35]
-                        }
-                    ]
-                },
-                type: "bar",
-                colors: ["green", "blue"],
-                height: 250
-            });
-            console.log("Normal chart created", chart);
-        });
-    }
-});
-
 // frappe.ui.form.on("Student", {
 //     refresh(frm) {
-
 //         frm.add_custom_button("Show Chart", () => {
-
+//             //its is used to show the chart for 1 time
 //             if (frm.$wrapper.find("#student-chart").length) {
 //                 return;
 //             }
-
 //             let chart_area = $(`
 //                 <div id="student-chart"
 //                      style="margin: 20px 0; height: 300px;">
 //                 </div>
 //             `);
+//             frm.$wrapper.find(".form-layout").append(chart_area);
+//             let chart = new frappe.Chart("#student-chart", {
+//                 title: "Student Data",
+//                 data: {
+//                     labels: ["A", "B", "C", "D"],
+//                     datasets: [
+//                         {
+//                             name: "Male",
+//                             values: [10, 20, 15, 25]
+//                         },
+//                         {
+//                             name: "Female",
+//                             values: [15, 25, 20, 35]
+//                         }
+//                     ]
+//                 },
+//                 type: "bar",
+//                 colors: ["green", "blue"],
+//                 height: 250
+//             });
+//             console.log("Normal chart created", chart);
+//         });
+//     }
+// });
 
+// frappe.ui.form.on("Student", {
+//     refresh(frm) {
+//         frm.add_custom_button("Show Chart", () => {
+//             if (frm.$wrapper.find("#student-chart").length) {
+//                 return;
+//             }
+//             let chart_area = $(`
+//                 <div id="student-chart"
+//                      style="margin: 20px 0; height: 300px;">
+//                 </div>
+//             `);
 //             frm.$wrapper.find(".form-layout").prepend(chart_area);
-
 //             let chart = new frappe.Chart("#student-chart", {
 //                 title: "Student Data",
 //                 data: {
@@ -242,9 +238,7 @@ frappe.ui.form.on("Student", {
 //                 },
 //                 type: "bar",
 //                 height: 250,
-
 //             });
-
 //             console.log("Normal chart created", chart);
 //         });
 //     }
@@ -344,35 +338,35 @@ frappe.ui.form.on("Student", {
 //     }
 // })
 
-frappe.ui.form.on("Student", {
-    refresh(frm) {
-        frm.add_custom_button("Select Students", () => {
-            new frappe.ui.form.MultiSelectDialog({
-                doctype: "Student",
-                //size: "large",
-                target: frm,
-                setters: {
-                    dob: null,
-                    age: null
-                },
-                add_filters_group: 1,
-                get_query() {
-                    return {
-                        filters: {}
-                    };
-                },
-                action(selections) {
-                    console.log("Selected Students:", selections);
+// frappe.ui.form.on("Student", {
+//     refresh(frm) {
+//         frm.add_custom_button("Select Students", () => {
+//             new frappe.ui.form.MultiSelectDialog({
+//                 doctype: "Student",
+//                 //size: "large",
+//                 target: frm,
+//                 setters: {
+//                     dob: null,
+//                     age: null
+//                 },
+//                 add_filters_group: 1,
+//                 get_query() {
+//                     return {
+//                         filters: {}
+//                     };
+//                 },
+//                 action(selections) {
+//                     console.log("Selected Students:", selections);
 
-                    frappe.show_alert(
-                        "Selected Students: " + selections.join(", ")
-                    );
-                }
-            });
+//                     frappe.show_alert(
+//                         "Selected Students: " + selections.join(", ")
+//                     );
+//                 }
+//             });
 
-        });
-    }
-});
+//         });
+//     }
+// });
 
 // frappe.ui.form.on("Student", {
 //     refresh(frm) {
@@ -431,26 +425,41 @@ frappe.ui.form.on("Student", {
 //     }
 // });
 
-frappe.ui.form.on("Student",{
-    refresh(){
-        let dialog = new frappe.ui.Dialog({
-            title:"Create Contact",
-            fields:[{
-                label:"First Name",
-                fieldname:"first_name",
-                fieldtype:"Data",
-                reqd:1
-            }],
-            primary_action_label:"Create",
-            primary_action(values){
-                let first_name = values.first_name
-                dialog.hide()
-                frappe.route_options = {
-                    first_name : first_name
-                }
-                frappe.new_doc("Contact")
-            }
-        })
-        dialog.show()
-    }
-})
+// frappe.ui.form.on("Student",{
+//     refresh(){
+//         let dialog = new frappe.ui.Dialog({
+//             title:"Create Contact",
+//             fields:[{
+//                 label:"First Name",
+//                 fieldname:"first_name",
+//                 fieldtype:"Data",
+//                 reqd:1
+//             }],
+//             primary_action_label:"Create",
+//             primary_action(values){
+//                 let first_name = values.first_name
+//                 dialog.hide()
+//                 frappe.route_options = {
+//                     first_name : first_name
+//                 }
+//                 frappe.new_doc("Contact")
+//             }
+//         })
+//         dialog.show()
+//     }
+// })
+
+
+//realtime API
+// frappe.ui.form.on("Student", {
+//     refresh() {
+//         console.log("realtime event....")
+
+//         frappe.realtime.on("student_message", function(data) {
+//             console.log(data)
+//         })
+//         frappe.call({method:'student_management.api.realtime_progress'}).then((r)=>{
+//             frappe.show_alert(r.message)
+//         })
+//     }
+// })

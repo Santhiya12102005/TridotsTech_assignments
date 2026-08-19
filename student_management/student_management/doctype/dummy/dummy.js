@@ -131,7 +131,7 @@
 // frappe.ui.form.on("Dummy",{
 // 	refresh(frm){
 // 		if(!frm.doc.email){
-// 			frm.set_intro('Please set the value of Email', 'green');
+// 			frm.set_intro('Please set the value of Email', 'blue');
 // 		}
 // 	}
 // })
@@ -158,3 +158,42 @@
 // 		}
 // 	}
 // });
+
+// frappe.ui.form.on("Dummy",{
+// 	refresh(frm){
+// 		frappe.call({
+// 			method:"student_management.api.testapi",
+// 			callback(r){
+// 				console.log(r.message)
+// 			}
+// 		})
+// 	}
+// })
+
+//background jobs
+// frappe.ui.form.on("Dummy",{
+// 	refresh(frm){
+// 		frm.add_custom_button("JOB",()=>{
+// 			frappe.call({
+// 				method:"student_management.api.test_background",
+// 				callback(r){
+// 					console.log(r.message)
+// 				}
+// 			})
+// 		})
+// 	}
+// })
+
+// multi queue
+frappe.ui.form.on("Dummy",{
+	refresh(frm){
+		frm.add_custom_button("JOB",()=>{
+			frappe.call({
+				method:"student_management.api.test_multi_queue",
+				callback(r){
+					console.log(r.message)
+				}
+			})
+		})
+	}
+})
