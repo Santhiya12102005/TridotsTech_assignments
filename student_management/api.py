@@ -6,6 +6,8 @@ import time
 from frappe.utils.logger import set_log_level
 from datetime import datetime
 from pypika import functions as fn
+from frappe.model.mapper import get_mapped_doc
+
 
 
 def custom_logic(doc, method):
@@ -257,3 +259,24 @@ def custom_logic(doc, method):
 #     for i in range(20):
 #         print("Long job:", i)
 #         time.sleep(5)
+
+
+
+@frappe.whitelist()
+@frappe.validate_and_sanitize_search_inputs
+def customer_query(doctype, txt, searchfield, start, page_len, filters=None):
+    return frappe.db.sql("""
+        SELECT name, 
+               CONCAT(customer_name, ' - ', customer_mobile_number) AS description
+        FROM `tabCustomer`
+        WHERE name LIKE %(txt)s 
+           OR customer_name LIKE %(txt)s 
+           OR customer_mobile_number LIKE %(txt)s
+        ORDER BY name
+        LIMIT %(start)s, %(page_len)s
+    """, {
+        "txt": "%" + txt + "%",
+        "start": start,
+        "page_len": page_len
+    })
+

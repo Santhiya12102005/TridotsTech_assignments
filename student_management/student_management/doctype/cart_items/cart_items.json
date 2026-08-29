@@ -1,0 +1,158 @@
+{
+ "actions": [],
+ "allow_bulk_edit": 1,
+ "allow_rename": 1,
+ "autoname": "Cart_Item-.##",
+ "creation": "2026-08-24 10:57:21.949526",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "section_break_abas",
+  "customer_mobile_number",
+  "create_customer",
+  "column_break_rvek",
+  "customer_name",
+  "section_break_dfyq",
+  "product",
+  "section_break_soth",
+  "total_amount",
+  "column_break_r1op",
+  "coupon_code",
+  "column_break_ncfq",
+  "with_discount",
+  "column_break_lvsn",
+  "balance_amount",
+  "section_break_dnlu",
+  "workflow_state",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "section_break_abas",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Cart Items",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "fetch_from": "customer_id.customer_name",
+   "fieldname": "customer_name",
+   "fieldtype": "Data",
+   "in_preview": 1,
+   "label": "Customer Name"
+  },
+  {
+   "fetch_from": "customer_id.customer_mobile_number",
+   "fieldname": "customer_mobile_number",
+   "fieldtype": "Data",
+   "in_preview": 1,
+   "label": "Customer Mobile Number",
+   "options": "Phone"
+  },
+  {
+   "fieldname": "product",
+   "fieldtype": "Table",
+   "label": "Product",
+   "options": "Product Items"
+  },
+  {
+   "fieldname": "total_amount",
+   "fieldtype": "Currency",
+   "label": "Total Amount"
+  },
+  {
+   "fieldname": "with_discount",
+   "fieldtype": "Currency",
+   "label": "With Discount"
+  },
+  {
+   "fieldname": "column_break_rvek",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_soth",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "section_break_dfyq",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_r1op",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_ncfq",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_lvsn",
+   "fieldtype": "Column Break"
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "balance_amount",
+   "fieldtype": "Currency",
+   "label": "Balance Amount"
+  },
+  {
+   "fieldname": "section_break_dnlu",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "workflow_state",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "Workflow State",
+   "read_only": 1
+  },
+  {
+   "fieldname": "create_customer",
+   "fieldtype": "Button",
+   "hidden": 1,
+   "label": "Create Customer"
+  },
+  {
+   "fieldname": "coupon_code",
+   "fieldtype": "Data",
+   "label": "Coupon Code"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2026-08-27 10:20:09.263290",
+ "modified_by": "Administrator",
+ "module": "Student Management",
+ "name": "Cart Items",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": []
+}
