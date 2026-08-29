@@ -5,6 +5,7 @@
  "allow_rename": 1,
  "autoname": "DUM-.###",
  "creation": "2026-07-29 14:38:55.075515",
+ "description": "dctvy",
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
@@ -33,7 +34,7 @@
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2026-08-21 12:23:35.070868",
+ "modified": "2026-08-29 16:06:01.056380",
  "modified_by": "Administrator",
  "module": "Student Management",
  "name": "Dummy",

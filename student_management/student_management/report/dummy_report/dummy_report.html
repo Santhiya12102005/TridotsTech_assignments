@@ -1,0 +1,32 @@
+<h2 class="text-center">Dummy Report</h2>
+
+<p>
+    <strong>Value Filter:</strong>
+    {{ filters.value || "100" }}
+</p>
+
+<table class="table table-bordered table-striped">
+
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Value</th>
+            <th>Email</th>
+        </tr>
+    </thead>
+
+    <tbody>
+
+        {% for(var i = 0; i < data.length; i++) { %}
+
+        <tr>
+            <td>{{ data[i].name1 }}</td>
+            <td>{{ data[i].value }}</td>
+            <td>{{ data[i].email }}</td>
+        </tr>
+
+        {% } %}
+
+    </tbody>
+
+</table>
