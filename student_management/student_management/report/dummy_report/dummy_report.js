@@ -2,11 +2,11 @@
 // For license information, please see license.txt
 
 frappe.query_reports["Dummy Report"] = {
-    "filters": [
+    filters: [
         {
-            "fieldname": "name",
-            "label": "Name",
-            "fieldtype": "Data"
+            fieldname: "value",
+            label: "Value",
+            fieldtype: "Currency"
         }
     ]
 };

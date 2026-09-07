@@ -2,40 +2,55 @@
  "actions": [],
  "allow_bulk_edit": 1,
  "allow_rename": 1,
- "creation": "2026-08-01 11:57:34.370685",
+ "creation": "2026-09-07 10:58:42.274614",
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
-  "practice",
-  "amended_from"
+  "section_break_23xd",
+  "amended_from",
+  "f_name",
+  "l_name",
+  "dob"
  ],
  "fields": [
   {
-   "fetch_if_empty": 1,
-   "fieldname": "practice",
-   "fieldtype": "Link",
-   "label": "Practice",
-   "options": "Practice"
+   "fieldname": "section_break_23xd",
+   "fieldtype": "Section Break"
   },
   {
    "fieldname": "amended_from",
    "fieldtype": "Link",
    "label": "Amended From",
    "no_copy": 1,
-   "options": "Testing",
+   "options": "Practice",
    "print_hide": 1,
    "read_only": 1,
    "search_index": 1
+  },
+  {
+   "fieldname": "f_name",
+   "fieldtype": "Data",
+   "label": "F Name"
+  },
+  {
+   "fieldname": "l_name",
+   "fieldtype": "Data",
+   "label": "L Name"
+  },
+  {
+   "fieldname": "dob",
+   "fieldtype": "Date",
+   "label": "DOB"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2026-09-05 13:58:14.974500",
+ "modified": "2026-09-07 10:59:32.884430",
  "modified_by": "Administrator",
  "module": "Student Management",
- "name": "Testing",
+ "name": "Practice",
  "owner": "Administrator",
  "permissions": [
   {
@@ -48,6 +63,7 @@
    "report": 1,
    "role": "System Manager",
    "share": 1,
+   "submit": 1,
    "write": 1
   }
  ],

@@ -2,40 +2,26 @@
  "actions": [],
  "allow_bulk_edit": 1,
  "allow_rename": 1,
- "creation": "2026-08-01 11:57:34.370685",
+ "creation": "2026-09-03 14:55:47.285861",
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
-  "practice",
-  "amended_from"
+  "crs_name"
  ],
  "fields": [
   {
-   "fetch_if_empty": 1,
-   "fieldname": "practice",
-   "fieldtype": "Link",
-   "label": "Practice",
-   "options": "Practice"
-  },
-  {
-   "fieldname": "amended_from",
-   "fieldtype": "Link",
-   "label": "Amended From",
-   "no_copy": 1,
-   "options": "Testing",
-   "print_hide": 1,
-   "read_only": 1,
-   "search_index": 1
+   "fieldname": "crs_name",
+   "fieldtype": "Data",
+   "label": "Crs Name"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
- "is_submittable": 1,
  "links": [],
- "modified": "2026-09-05 13:58:14.974500",
+ "modified": "2026-09-03 14:56:04.938286",
  "modified_by": "Administrator",
  "module": "Student Management",
- "name": "Testing",
+ "name": "Test Crs",
  "owner": "Administrator",
  "permissions": [
   {

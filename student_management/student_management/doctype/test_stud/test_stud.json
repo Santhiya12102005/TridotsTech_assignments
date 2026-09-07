@@ -2,40 +2,46 @@
  "actions": [],
  "allow_bulk_edit": 1,
  "allow_rename": 1,
- "creation": "2026-08-01 11:57:34.370685",
+ "creation": "2026-09-03 12:51:30.306081",
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
-  "practice",
-  "amended_from"
+  "stud_name",
+  "dept",
+  "age",
+  "course"
  ],
  "fields": [
   {
-   "fetch_if_empty": 1,
-   "fieldname": "practice",
-   "fieldtype": "Link",
-   "label": "Practice",
-   "options": "Practice"
+   "fieldname": "stud_name",
+   "fieldtype": "Data",
+   "label": "Stud Name"
   },
   {
-   "fieldname": "amended_from",
+   "fieldname": "dept",
    "fieldtype": "Link",
-   "label": "Amended From",
-   "no_copy": 1,
-   "options": "Testing",
-   "print_hide": 1,
-   "read_only": 1,
-   "search_index": 1
+   "label": "Dept",
+   "options": "Test Dept"
+  },
+  {
+   "fieldname": "age",
+   "fieldtype": "Int",
+   "label": "Age"
+  },
+  {
+   "fieldname": "course",
+   "fieldtype": "Link",
+   "label": "Course",
+   "options": "Test Crs"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
- "is_submittable": 1,
  "links": [],
- "modified": "2026-09-05 13:58:14.974500",
+ "modified": "2026-09-03 14:56:42.911194",
  "modified_by": "Administrator",
  "module": "Student Management",
- "name": "Testing",
+ "name": "Test Stud",
  "owner": "Administrator",
  "permissions": [
   {

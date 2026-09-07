@@ -1,45 +1,44 @@
 import frappe
 
 def execute(filters=None):
-    columns = get_columns()
-    data = get_data(filters)
 
-    return columns, data
-
-def get_columns():
-    return [
+    columns = [
         {
             "label": "Name",
             "fieldname": "name1",
             "fieldtype": "Data",
-            "width": 100
+            "width": 150
         },
         {
             "label": "Value",
             "fieldname": "value",
-            "fieldtype": "Data",
-            "width": 100
+            "fieldtype": "Currency",
+            "width": 120
         },
         {
             "label": "Email",
             "fieldname": "email",
             "fieldtype": "Data",
-            "width": 100
+            "width": 200
         }
     ]
 
-
-def get_data(filters=None):
-    return frappe.get_all(
-        "Dummy",
-        filters={
-            "value": 100
+    data = [
+        {
+            "name1": "Santhiya",
+            "value": 1000,
+            "email": "santhiya@example.com"
         },
-        fields=[
-            "name1",
-            "value",
-            "email"
-        ]
-    )
+        {
+            "name1": "Nisha",
+            "value": 1500,
+            "email": "nisha@example.com"
+        },
+        {
+            "name1": "Priya",
+            "value": 2000,
+            "email": "priya@example.com"
+        }
+    ]
 
-    return data
+    return columns, data

@@ -1,0 +1,102 @@
+{
+ "app": "student_management",
+ "charts": [],
+ "content": "[{\"id\":\"nwRRlHKuf-\",\"type\":\"custom_block\",\"data\":{\"custom_block_name\":\"Test CHB\",\"col\":12}},{\"id\":\"eZgCOfvsOn\",\"type\":\"paragraph\",\"data\":{\"text\":\"This is normal workspace\",\"col\":12}},{\"id\":\"ab3P9JmY66\",\"type\":\"quick_list\",\"data\":{\"quick_list_name\":\"Payments\",\"col\":4}},{\"id\":\"Vt4ZxwhyzR\",\"type\":\"quick_list\",\"data\":{\"quick_list_name\":\"Customers\",\"col\":4}},{\"id\":\"94t1Q7sJ34\",\"type\":\"card\",\"data\":{\"card_name\":\"Card\",\"col\":4}},{\"id\":\"pe5Al2iK8V\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"Mt2j3DDquF\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Cart Items\",\"col\":4}},{\"id\":\"lIpJs_B87E\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Report\",\"col\":3}}]",
+ "creation": "2026-09-05 14:14:54.790866",
+ "custom_blocks": [
+  {
+   "custom_block_name": "Test CHB",
+   "label": "Test CHB"
+  }
+ ],
+ "docstatus": 0,
+ "doctype": "Workspace",
+ "hide_custom": 0,
+ "icon": "air-vent",
+ "idx": 0,
+ "indicator_color": "green",
+ "is_hidden": 0,
+ "label": "Normal",
+ "link_type": "DocType",
+ "links": [
+  {
+   "description": "<h3>This is Card</h3>",
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Card",
+   "link_count": 3,
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Cart Items",
+   "link_count": 0,
+   "link_to": "Cart Items",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Page",
+   "link_count": 0,
+   "link_to": "my-page",
+   "link_type": "Page",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Report",
+   "link_count": 0,
+   "link_to": "Dummy report",
+   "link_type": "Report",
+   "onboard": 0,
+   "report_ref_doctype": "Dummy",
+   "type": "Link"
+  }
+ ],
+ "modified": "2026-09-05 14:37:28.894446",
+ "modified_by": "Administrator",
+ "module": "Student Management",
+ "name": "Normal",
+ "number_cards": [
+  {
+   "label": "Cart Items",
+   "number_card_name": "Total Cart Item"
+  }
+ ],
+ "owner": "Administrator",
+ "public": 1,
+ "quick_lists": [
+  {
+   "document_type": "Make Payment",
+   "label": "Payments",
+   "quick_list_filter": "[]"
+  },
+  {
+   "document_type": "Customers",
+   "label": "Customers",
+   "quick_list_filter": "[]"
+  }
+ ],
+ "roles": [],
+ "sequence_id": 0.0,
+ "shortcuts": [
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Report",
+   "link_to": "test report",
+   "report_ref_doctype": "Test Stud",
+   "type": "Report"
+  }
+ ],
+ "title": "Normal",
+ "type": "Workspace"
+}

@@ -5,7 +5,7 @@
 from frappe.model.document import Document
 
 
-class Testing(Document):
+class Practice(Document):
 	# begin: auto-generated types
 	# This code is auto-generated. Do not modify anything in this block.
 
@@ -15,7 +15,9 @@ class Testing(Document):
 		from frappe.types import DF
 
 		amended_from: DF.Link | None
-		practice: DF.Link | None
+		dob: DF.Date | None
+		f_name: DF.Data | None
+		l_name: DF.Data | None
 	# end: auto-generated types
 
 	pass
