@@ -327,3 +327,5 @@ scheduler_events = {
 # get_web_pages_with_dynamic_routes = (
 #     "student_management.script.get_web_pages_with_dynamic_routes"
 # )
+
+fixtures = ["Client Script"]

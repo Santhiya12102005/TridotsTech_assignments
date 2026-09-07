@@ -1,0 +1,90 @@
+[
+ {
+  "docstatus": 0,
+  "doctype": "Client Script",
+  "dt": "Dummy",
+  "enabled": 0,
+  "modified": "2026-07-29 15:41:12.542549",
+  "module": "Student Management",
+  "name": "Validation1",
+  "script": "frappe.ui.form.on('Dummy', {\n    validate(frm) {\n        if (frm.doc.value < 18) {\n            frappe.msgprint(\"You're not eligible\");\n            frappe.validated = false;\n        }\n    }\n});",
+  "view": "Form"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Client Script",
+  "dt": "Registration",
+  "enabled": 1,
+  "modified": "2026-08-14 12:23:15.383476",
+  "module": null,
+  "name": "Custom List REG",
+  "script": "frappe.listview_settings[\"Registration\"].formatters = {\r\n    is_checked(value) {\r\n        return cint(value) ? \"Yes\" : \"No\";\r\n    },\r\n\r\n    age(value) {\r\n        return value ? `${value} Years old` : value;\r\n    }\r\n};",
+  "view": "List"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Client Script",
+  "dt": "Student",
+  "enabled": 1,
+  "modified": "2026-08-12 14:48:11.443646",
+  "module": null,
+  "name": "custom Student",
+  "script": "// frappe.ui.form.on(\"Student\", {\r\n//     refresh(frm) {\r\n//         //console.log(\"1. Refresh started\");\r\n\r\n//         console.log(\"DOB value:\", frm.doc.dob);\r\n\r\n//         let formatted_date = frappe.format(\r\n//             frm.doc.dob,\r\n//             { fieldtype: \"Date\" }\r\n//         );\r\n\r\n//         console.log(\"Formatted date:\", formatted_date);\r\n//     }\r\n// });\r\n\r\n// frappe.ui.form.on(\"Student\",{\r\n//     refresh(frm){\r\n//         frappe.provide(\"student_management.utils\")\r\n//         student_management.utils.say_hello = function(){\r\n//             console.log(\"Hello Sandy\")\r\n//         }\r\n//         student_management.utils.say_hello()\r\n//     }\r\n// })\r\n\r\n// frappe.ui.form.on(\"Student\", {\r\n//     refresh(frm) {\r\n\r\n//         frappe.require([\r\n//             \"/assets/student_management/js/my_library.js\",\r\n//             \"/assets/student_management/css/my_library.css\"\r\n//         ], () => {\r\n//             console.log(\"JS and CSS loaded\");\r\n//         });\r\n\r\n//     }\r\n// });",
+  "view": "Form"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Client Script",
+  "dt": "Student",
+  "enabled": 1,
+  "modified": "2026-08-14 14:35:30.939474",
+  "module": null,
+  "name": "socketio testing",
+  "script": "frappe.realtime.on(\"student_message\", (data)=>{\n    console.log(\"Executed\")\n    console.log(data.message)\n    console.log(data.name)\n})",
+  "view": "Form"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Client Script",
+  "dt": "Registration",
+  "enabled": 1,
+  "modified": "2026-08-14 14:42:04.284723",
+  "module": null,
+  "name": "socket_io testing-1",
+  "script": "frappe.realtime.on(\"registration\",(data)=>{\n    console.log(data.message)\n    console.log(data.name)\n})",
+  "view": "Form"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Client Script",
+  "dt": "Cart Items",
+  "enabled": 1,
+  "modified": "2026-08-27 11:23:46.068034",
+  "module": "Student Management",
+  "name": "Cart Item",
+  "script": "frappe.ui.form.on('Product Items', {\n\tquantity(frm,cdt,cdn){\n\t    total(cdt,cdn);\n\t},\n\tproduct_price(frm,cdt,cdn){\n\t    total(cdt,cdn);\n\t},\n\ttotal(frm){\n\t    calculate_total(frm);\n\t},\n\tproduct_remove(frm,cdt,cdn){\n\t    calculate_total(frm)\n\t},\n\n});\n\nfrappe.ui.form.on(\"Cart Items\", {\n\n    coupon_code(frm) {\n        ccoupon_code(frm);\n    },\n    total_amount(frm) {\n        ccoupon_code(frm);\n    }\n\n});\n\nfunction total(cdt,cdn){\n    let row = locals[cdt][cdn];\n    frappe.model.set_value(cdt,cdn,\"total\",(row.quantity || 0)*(row.product_price ||0))\n    \n}\n\nfunction calculate_total(frm){\n    let total_amt = 0;\n    (frm.doc.product || []).forEach(row=>{\n        total_amt += row.total || 0;\n    });\n    frm.set_value('total_amount',total_amt);\n    frm.set_value('with_discount',total_amt);\n    frm.set_value('balance_amount',total_amt);\n}\n\n function  ccoupon_code(frm){\n        if(!frm.doc.coupon_code){\n            frm.set_value('with_discount',frm.doc.total_amount);\n            frm.set_value('balance_amount',frm.doc.total_amount);\n            return;\n        }\n        frappe.db.get_doc(\"Coupon\",\n            frm.doc.coupon_code\n        ).then(r=>{\n            if(!r.active){\n                frappe.msgprint(\"The coupon is not active!\")\n                frm.set_value('with_discount',frm.doc.total_amount);\n                frm.set_value('balance_amount',frm.doc.total_amount);\n                return;\n            }\n            \n            if((frm.doc.total_amount || 0)<r.minimum_amount){\n                frappe.msgprint(`Add more items upto ${r.minimum_amount}`)\n            }\n            \n            let discount = (frm.doc.total_amount*r.percentage)/100;\n            let discount_amount = frm.doc.total_amount - discount;\n            \n            frm.set_value(\"with_discount\",discount_amount);\n            frm.set_value(\"balance_amount\",discount_amount);\n            \n            frappe.show_alert({\n                message:`Coupon Applied with ${r.percentage}% percentage`,\n                indicator:'green'\n            })\n        })\n}\n\n",
+  "view": "Form"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Client Script",
+  "dt": "Grade Sheet",
+  "enabled": 1,
+  "modified": "2026-08-29 12:18:47.445953",
+  "module": null,
+  "name": "grade sheet",
+  "script": "frappe.ui.form.on('Grade Sheet', {\r\n    refresh(frm){\r\n        frm.toggle_display(\"create_student\",false);\r\n    },\r\n    roll_number(frm) {\r\n        let roll_no = frm.doc.roll_number;\r\n\r\n        if (!roll_no) {\r\n            frm.set_value(\"student_name\", \"\");\r\n            frm.toggle_display(\"create_student\", false);\r\n            return;\r\n        }\r\n\r\n        frappe.db.get_value(\r\n            \"Stud\",\r\n            {\r\n                roll_number: roll_no\r\n            },\r\n            [\r\n                \"name\",\r\n                \"student_name\"\r\n            ]\r\n        ).then(r => {\r\n            if (r.message && r.message.name) {\r\n                frm.set_value(\"student_name\", r.message.student_name);\r\n                frm.toggle_display(\"create_student\", false); // also important\r\n            } else {\r\n                frm.set_value(\"student_name\", \"\");\r\n                frm.toggle_display(\"create_student\", true);\r\n            }\r\n        });\r\n    },\r\n\r\n    create_student(frm) {\r\n        let dialog = new frappe.ui.Dialog({\r\n            title: \"Create Student\",\r\n\r\n            fields: [\r\n                {\r\n                    fieldname: \"roll_number\",\r\n                    label: \"Roll Number\",\r\n                    fieldtype: \"Data\",\r\n                    default: frm.doc.roll_number,\r\n                    read_only: 1\r\n                },\r\n                {\r\n                    fieldname: \"student_name\",\r\n                    label: \"Student Name\",\r\n                    fieldtype: \"Data\",\r\n                    reqd: 1\r\n                }\r\n            ],\r\n\r\n            primary_action_label: \"Create\",\r\n\r\n            primary_action(values) {\r\n                frappe.call({\r\n                    method: \"frappe.client.insert\",\r\n\r\n                    args: {\r\n                        doc: {\r\n                            doctype: \"Stud\",\r\n                            roll_number: values.roll_number,\r\n                            student_name: values.student_name\r\n                        }\r\n                    },\r\n\r\n                    callback(r) {\r\n                        if (r.message) {\r\n                            frm.set_value(\"student_name\", values.student_name);\r\n                            frm.toggle_display(\"create_student\", false);\r\n\r\n                            frappe.show_alert({\r\n                                message: `Student created with ${values.roll_number}`,\r\n                                indicator: \"blue\"\r\n                            });\r\n\r\n                            dialog.hide();\r\n                        }\r\n                    }\r\n                });\r\n            }\r\n        });\r\n\r\n        dialog.show();\r\n    }\r\n});",
+  "view": "Form"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Client Script",
+  "dt": "User",
+  "enabled": 1,
+  "modified": "2026-09-07 14:29:45.291478",
+  "module": null,
+  "name": "user cs",
+  "script": "frappe.ui.form.on(\"User\", {\r\n    refresh(frm) {\r\n        frm.add_custom_button(\"Send Welcome Email\", () => {\r\n            frappe.msgprint(\"Email Sent!\");\r\n        }, \"Actions\");\r\n    }\r\n});",
+  "view": "Form"
+ }
+]
