@@ -1,8 +1,10 @@
 <h2 class="text-center">Dummy Report</h2>
+
 <p>
     <strong>Value Filter:</strong>
-    {{ filters.value || "100" }}
+    {%= filters.value || "All" %}
 </p>
+
 <table class="table table-bordered table-striped">
     <thead>
         <tr>
@@ -11,12 +13,17 @@
             <th>Email</th>
         </tr>
     </thead>
+
     <tbody>
         {% for(var i = 0; i < data.length; i++) { %}
         <tr>
-            <td>{{ data[i].name1 }}</td>
-            <td>{{ data[i].value }}</td>
-            <td>{{ data[i].email }}</td>
+            <td>{%= data[i].name1 %}</td>
+
+            <td>
+                {%= format_currency(data[i].value, "INR") %}
+            </td>
+
+            <td>{%= data[i].email %}</td>
         </tr>
         {% } %}
     </tbody>
