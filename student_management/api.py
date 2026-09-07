@@ -7,6 +7,7 @@ from frappe.utils.logger import set_log_level
 from datetime import datetime
 from pypika import functions as fn
 from frappe.model.mapper import get_mapped_doc
+from frappe.rate_limiter import rate_limit
 
 
 
@@ -262,21 +263,30 @@ def custom_logic(doc, method):
 
 
 
-@frappe.whitelist()
-@frappe.validate_and_sanitize_search_inputs
-def customer_query(doctype, txt, searchfield, start, page_len, filters=None):
-    return frappe.db.sql("""
-        SELECT name, 
-               CONCAT(customer_name, ' - ', customer_mobile_number) AS description
-        FROM `tabCustomer`
-        WHERE name LIKE %(txt)s 
-           OR customer_name LIKE %(txt)s 
-           OR customer_mobile_number LIKE %(txt)s
-        ORDER BY name
-        LIMIT %(start)s, %(page_len)s
-    """, {
-        "txt": "%" + txt + "%",
-        "start": start,
-        "page_len": page_len
-    })
+# @frappe.whitelist()
+# @frappe.validate_and_sanitize_search_inputs
+# def customer_query(doctype, txt, searchfield, start, page_len, filters=None):
+#     return frappe.db.sql("""
+#         SELECT name, 
+#                CONCAT(customer_name, ' - ', customer_mobile_number) AS description
+#         FROM `tabCustomer`
+#         WHERE name LIKE %(txt)s 
+#            OR customer_name LIKE %(txt)s 
+#            OR customer_mobile_number LIKE %(txt)s
+#         ORDER BY name
+#         LIMIT %(start)s, %(page_len)s
+#     """, {
+#         "txt": "%" + txt + "%",
+#         "start": start,
+#         "page_len": page_len
+#     })
 
+
+
+@frappe.whitelist(allow_guest=True)
+@rate_limit(limit=5, seconds=60)
+def limited_greeting():
+    logger = frappe.logger()
+    logger.info("Endpoint called.")
+
+    frappe.response["message"] = "Hello, Rate Limited World!"
