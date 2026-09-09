@@ -6,3 +6,13 @@
 
 // 	},
 // });
+console.log("JS LOADED");
+
+frappe.realtime.on("student_realtime", (data) => {
+    console.log("EVENT RECEIVED:", data);
+
+    frappe.show_alert({
+        message: `New Student Added: ${data.name} (${data.roll_no})`,
+        indicator: "green"
+    });
+});

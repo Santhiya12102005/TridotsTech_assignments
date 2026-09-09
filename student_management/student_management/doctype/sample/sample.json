@@ -2,35 +2,32 @@
  "actions": [],
  "allow_bulk_edit": 1,
  "allow_rename": 1,
- "autoname": "Article-.##",
- "creation": "2026-09-07 17:11:45.746803",
+ "creation": "2026-09-09 12:01:56.324279",
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
-  "title",
-  "status"
+  "update_name",
+  "age"
  ],
  "fields": [
   {
-   "fieldname": "title",
-   "fieldtype": "Data",
-   "label": "Title"
+   "fieldname": "age",
+   "fieldtype": "Int",
+   "label": "Age"
   },
   {
-   "fieldname": "status",
-   "fieldtype": "Select",
-   "label": "Status",
-   "options": "Draft\nPublished"
+   "fieldname": "update_name",
+   "fieldtype": "Data",
+   "label": "Name"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2026-09-08 10:58:40.365788",
+ "modified": "2026-09-09 12:15:49.057536",
  "modified_by": "Administrator",
  "module": "Student Management",
- "name": "Articles",
- "naming_rule": "Expression",
+ "name": "Sample",
  "owner": "Administrator",
  "permissions": [
   {

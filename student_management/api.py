@@ -283,10 +283,23 @@ def custom_logic(doc, method):
 
 
 
-@frappe.whitelist(allow_guest=True)
-@rate_limit(limit=5, seconds=60)
-def limited_greeting():
-    logger = frappe.logger()
-    logger.info("Endpoint called.")
+# @frappe.whitelist(allow_guest=True)
+# @rate_limit(limit=5, seconds=60)
+# def limited_greeting():
+#     logger = frappe.logger()
+#     logger.info("Endpoint called.")
 
-    frappe.response["message"] = "Hello, Rate Limited World!"
+#     frappe.response["message"] = "Hello, Rate Limited World!"
+
+# @frappe.whitelist()
+# def check_action():
+#     frappe.msgprint("Hi This is from check_action methon in api.py")
+
+@frappe.whitelist()
+def job():
+    frappe.enqueue(
+        "student_management.bg_jobs.sample_job",
+        queue="short"
+    )
+
+    return "Background job added successfully"

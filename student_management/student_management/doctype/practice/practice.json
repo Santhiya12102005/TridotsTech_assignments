@@ -1,56 +1,77 @@
 {
- "actions": [],
+ "actions": [
+  {
+   "action": "student_management.api.check_action",
+   "action_type": "Server Action",
+   "group": "Actions",
+   "label": "Check Action"
+  }
+ ],
  "allow_bulk_edit": 1,
  "allow_rename": 1,
- "creation": "2026-09-07 10:58:42.274614",
+ "autoname": "field:roll_no",
+ "creation": "2026-09-08 11:02:34.527450",
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
-  "section_break_23xd",
-  "amended_from",
-  "f_name",
-  "l_name",
-  "dob"
+  "name1",
+  "age",
+  "column_break_nkiy",
+  "roll_no",
+  "department"
  ],
  "fields": [
   {
-   "fieldname": "section_break_23xd",
-   "fieldtype": "Section Break"
-  },
-  {
-   "fieldname": "amended_from",
-   "fieldtype": "Link",
-   "label": "Amended From",
-   "no_copy": 1,
-   "options": "Practice",
-   "print_hide": 1,
-   "read_only": 1,
-   "search_index": 1
-  },
-  {
-   "fieldname": "f_name",
+   "allow_in_quick_entry": 1,
+   "fieldname": "name1",
    "fieldtype": "Data",
-   "label": "F Name"
+   "in_list_view": 1,
+   "label": "Name",
+   "options": "Name",
+   "placeholder": "Enter Your Name"
   },
   {
-   "fieldname": "l_name",
+   "allow_in_quick_entry": 1,
+   "fieldname": "age",
+   "fieldtype": "Int",
+   "label": "Age",
+   "placeholder": "Enter your age"
+  },
+  {
+   "allow_in_quick_entry": 1,
+   "fieldname": "department",
+   "fieldtype": "Select",
+   "label": "Department",
+   "options": "\nCSE\nIT\nAIML\nAIDS\nECE\nMECH"
+  },
+  {
+   "allow_in_quick_entry": 1,
+   "bold": 1,
+   "fieldname": "roll_no",
    "fieldtype": "Data",
-   "label": "L Name"
+   "label": "Roll Number",
+   "placeholder": "eg. STU-123",
+   "unique": 1
   },
   {
-   "fieldname": "dob",
-   "fieldtype": "Date",
-   "label": "DOB"
+   "fieldname": "column_break_nkiy",
+   "fieldtype": "Column Break"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
- "is_submittable": 1,
- "links": [],
- "modified": "2026-09-07 10:59:32.884430",
+ "links": [
+  {
+   "group": "Articles",
+   "link_doctype": "Articles",
+   "link_fieldname": "title"
+  }
+ ],
+ "modified": "2026-09-08 12:01:27.508977",
  "modified_by": "Administrator",
  "module": "Student Management",
  "name": "Practice",
+ "naming_rule": "By fieldname",
  "owner": "Administrator",
  "permissions": [
   {
@@ -63,10 +84,10 @@
    "report": 1,
    "role": "System Manager",
    "share": 1,
-   "submit": 1,
    "write": 1
   }
  ],
+ "quick_entry": 1,
  "row_format": "Dynamic",
  "rows_threshold_for_grid_search": 20,
  "sort_field": "creation",

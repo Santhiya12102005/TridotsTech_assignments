@@ -1,14 +1,8 @@
 // Copyright (c) 2026, Santhiya and contributors
 // For license information, please see license.txt
 
-// frappe.ui.form.on("Articles", {
+// frappe.ui.form.on("Sample", {
 // 	refresh(frm) {
 
 // 	},
 // });
-
-frappe.ui.form.on("Articles",{
-    refresh(frm){
-        console.log(frm.doc)
-    }
-})
